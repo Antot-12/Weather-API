@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #009999;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5em;
+            animation: fadeIn 3s ease-in-out;
+        }
+        a {
+            color: orange;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .buttons a {
+            margin: 0 15px;
+            padding: 15px 30px;
+            border: 2px solid #009999;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .buttons a:hover {
+            background-color: #009999;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Weather API</h1>
+        <p>Use the links below to check the weather:</p>
+        <div class="buttons">
+            <a href="#" onclick="getLocationWeather()">Get Local Weather</a>
+            <a href="#" onclick="getLocationForecast()">Get Local Forecast</a>
+        </div>
+    </div>
+
+    <script>
+        function getLocationWeather() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showWeather);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function getLocationForecast() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showForecast);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showWeather(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            window.location.href = `/weather?lat=${lat}&lon=${lon}`;
+        }
+
+        function showForecast(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            window.location.href = `/forecast?lat=${lat}&lon=${lon}`;
+        }
+    </script>
+</body>
+</html>
