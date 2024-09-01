@@ -1,3 +1,4 @@
+
 # 🌦️ The Greatest Weather App 🌍
 
 Welcome to **The Greatest Weather App**, a versatile weather forecasting tool that provides accurate weather information based on your location or any city you choose! Built with Python and enhanced with a sleek, dark-themed UI using Material-UI.
@@ -11,14 +12,15 @@ Welcome to **The Greatest Weather App**, a versatile weather forecasting tool th
 - **Dark Themed UI**: A modern, sleek, and minimalistic design with a dark theme and vivid colors. 🎨
 - **Material-UI Enhanced**: Leveraging Material-UI for a smooth and responsive user experience. 🖱️
 - **Real-Time Updates**: Get the latest weather updates in real-time for any location. ⏱️
+- **Hourly Forecast**: View the weather forecast hour by hour to plan your day better. 🕒
 
 ## 🌐 Language Translation Screenshots
 
 ### Default Location (Using Geolocation)
 ![Default Location Preview](screenshots/2.png)
 
-### Custom City and Country Input
-![Custom Location Preview](screenshots/3.png)
+### Hourly Forecast
+![Hourly Forecast Preview](screenshots/3.png)
 
 ## 🛠️ Installation
 
@@ -46,11 +48,10 @@ Welcome to **The Greatest Weather App**, a versatile weather forecasting tool th
 
 ### Custom Location Weather
 
-1. To get the weather for a specific city:
-   - Enter the city name in the "City" field.
-   - Optionally, enter the country name in the "Country" field.
-   - Click on the "Get Weather" button. 🌐
+1. Enter a city and country in the provided input fields.
+2. Click the "Get Weather" button to fetch the weather information for the specified location. 🌐
 
-2. The weather information will be displayed based on the city and country you entered. 🏙️
+### Hourly Forecast
 
-
+1. After fetching the weather, switch to the "Hourly Forecast" tab.
+2. View detailed weather predictions for each hour of the day. 🕒
